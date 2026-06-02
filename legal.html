@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal & Policies | TBR - ToBeReal</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+      :root {
+        --bg-white: #ffffff;
+        --text-dark: #0e131f;
+        --text-muted: #64748b;
+        --canva-purple: #8b3dff;
+        --canva-cyan: #00c4cc;
+        --border-light: #e2e8f0;
+        --light-surface: #f8fafc;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* NAVIGATION BAR */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+        border-bottom: 1px solid var(--border-light);
+        background: rgba(255, 255, 255, 0.95);
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+      }
+      .logo {
+        font-size: 28px;
+        font-weight: 900;
+        color: var(--canva-purple);
+        font-style: italic;
+        text-decoration: none;
+        letter-spacing: -1px;
+      }
+      .btn-outline {
+        border: 2px solid var(--border-light);
+        color: var(--text-dark);
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        transition: all 0.2s ease;
+      }
+      .btn-outline:hover {
+        border-color: var(--canva-purple);
+        color: var(--canva-purple);
+      }
+
+      /* HEADER SECTION */
+      .legal-header {
+        text-align: center;
+        padding: 60px 20px 40px;
+        background: var(--light-surface);
+        border-bottom: 1px solid var(--border-light);
+      }
+      .legal-header h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        letter-spacing: -1.5px;
+        margin-bottom: 16px;
+        color: var(--text-dark);
+      }
+      .legal-header p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        font-weight: 500;
+      }
+
+      /* CONTENT WRAPPER */
+      .legal-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .policy-section {
+        margin-bottom: 60px;
+      }
+      .policy-section h2 {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 24px;
+        color: var(--canva-purple);
+        border-bottom: 2px solid var(--border-light);
+        padding-bottom: 10px;
+      }
+      .policy-section h3 {
+        font-size: 1.25rem;
+        margin-top: 30px;
+        margin-bottom: 12px;
+        color: var(--text-dark);
+        font-weight: 800;
+      }
+      .policy-section p,
+      .policy-section li {
+        color: #475569;
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 16px;
+        text-align: justify;
+      }
+      .policy-section ul {
+        padding-left: 24px;
+        margin-bottom: 16px;
+      }
+      .policy-section strong {
+        color: var(--text-dark);
+      }
+
+      .highlight-box {
+        background: rgba(139, 61, 255, 0.05);
+        border-left: 4px solid var(--canva-purple);
+        padding: 16px 20px;
+        border-radius: 0 8px 8px 0;
+        margin: 20px 0;
+      }
+      .highlight-box p {
+        margin-bottom: 0;
+        color: var(--canva-purple);
+        font-weight: 600;
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: #0b0f19;
+        color: white;
+        padding: 60px 5% 30px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 40px;
+      }
+      .footer-col h4 {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #f8fafc;
+      }
+      .footer-col p {
+        color: #94a3b8;
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+      .footer-bottom {
+        text-align: center;
+        font-size: 13px;
+        color: #64748b;
+      }
+
+      @media (max-width: 768px) {
+        .legal-header h1 {
+          font-size: 2.2rem;
+        }
+        .policy-section h2 {
+          font-size: 1.5rem;
+        }
+        nav {
+          padding: 15px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="logo">TBR.</a>
+      <a href="index.html" class="btn-outline">Back to Home</a>
+    </nav>
+
+    <header class="legal-header">
+      <h1>Legal & Policies</h1>
+      <p>
+        Comprehensive terms of service, privacy guidelines, and operational
+        policies for TBR (ToBeReal).
+      </p>
+    </header>
+
+    <main class="legal-container">
+      <section id="terms" class="policy-section">
+        <h2>1. Terms & Conditions</h2>
+        <p><strong>Last Updated: May 2026</strong></p>
+        <p>
+          These Terms and Conditions constitute a legally binding agreement made
+          between you, whether personally or on behalf of an entity (“you”) and
+          <strong>Aryendra Chaudhary</strong> operating as
+          <strong>TBR (ToBeReal)</strong> (“we,” “us,” or “our”), concerning
+          your access to and use of the TBR application and website.
+        </p>
+
+        <h3>1.1 Acceptance of Terms</h3>
+        <p>
+          By accessing or utilizing the TBR platform, you agree to be bound by
+          these Terms. If you do not agree with all of these terms, you are
+          expressly prohibited from using the platform and must discontinue use
+          immediately.
+        </p>
+
+        <h3>1.2 Third-Party Integrations (Instagram Disclaimer)</h3>
+        <p>
+          TBR provides users with uniquely generated URLs designed to be shared
+          on third-party platforms, primarily Instagram. By using our service,
+          you acknowledge that we operate entirely independently.
+          <strong
+            >TBR is not affiliated with, sponsored by, or endorsed by Meta
+            Platforms, Inc. or Instagram.</strong
+          >
+          Users must adhere to Instagram's community guidelines when sharing our
+          links.
+        </p>
+
+        <h3>1.3 Content & Moderation</h3>
+        <p>
+          To maintain a safe environment, TBR employs automated AI-based filters
+          to scan incoming text and images. Any content flagged as explicit,
+          abusive, or harmful is automatically blocked. However, no automated
+          system is 100% flawless. You agree that TBR acts purely as a conduit
+          and cannot be held legally liable for user-generated content.
+        </p>
+      </section>
+
+      <section id="privacy" class="policy-section">
+        <h2>2. Privacy Policy & Data Safety</h2>
+        <p>
+          We are intensely dedicated to ensuring the protection of your data.
+          This section outlines exactly what we collect, why we collect it, and
+          how you maintain control.
+        </p>
+
+        <h3>2.1 Strict Anonymity Promise</h3>
+        <div class="highlight-box">
+          <p>
+            We do not capture, demand, or store the social media handle, real
+            name, or exact identity of any anonymous sender.
+          </p>
+        </div>
+        <p>
+          The foundational premise of TBR is honest, anonymous messaging. We
+          cannot and will not reveal personal identities to the receiver.
+        </p>
+
+        <h3>2.2 Information We Collect (Device & Network Metadata)</h3>
+        <p>
+          To provide enhanced security, prevent spam, and operate our "Premium
+          Hints" feature, we collect certain non-personally identifiable
+          technical metadata when a user interacts with a TBR link. This
+          includes:
+        </p>
+        <ul>
+          <li>
+            <strong>IP Address & Estimated Location:</strong> We collect the IP
+            address to deduce an approximate geographic region (e.g., City,
+            State, Country) to prevent abusive spam and provide location hints.
+            <strong>We do not track precise GPS locations.</strong>
+          </li>
+          <li>
+            <strong>Device & Browser Information:</strong> We log device models,
+            operating system versions, browser types, screen resolutions,
+            network types (e.g., WiFi/4G), and battery levels at the time of
+            sending a message.
+          </li>
+        </ul>
+
+        <h3>2.3 Astrological & Numerological Data Handling</h3>
+        <p>
+          TBR offers specialized features involving Zodiac compatibility and
+          Vedic Astrology. To facilitate this:
+        </p>
+        <ul>
+          <li>
+            <strong>Registered Users:</strong> If you set up an Astro Profile,
+            your Date of Birth, Time of Birth, and Place of Birth
+            (Latitude/Longitude) are securely stored in our database strictly to
+            generate your birth charts (D1/D9). This data is never publicly
+            displayed or sold to third parties.
+          </li>
+          <li>
+            <strong>Anonymous Senders:</strong> When a sender inputs their Date
+            of Birth to check compatibility via a link, this data is
+            <strong>processed ephemerally</strong> (on-the-fly) to calculate the
+            compatibility score and is NOT permanently stored in our database.
+          </li>
+        </ul>
+
+        <h3>2.4 Ephemeral Media Storage</h3>
+        <p>
+          Any media uploaded by a sender through a TBR link is handled with
+          strict ephemeral protocols.
+          <strong
+            >Media files are temporarily stored in our encrypted database for a
+            maximum duration of 24 hours.</strong
+          >
+          After this period, automated scripts permanently delete the images
+          from our active servers.
+        </p>
+
+        <h3>2.5 Data Deletion & Account Termination</h3>
+        <div class="highlight-box">
+          <p>You have the absolute right to delete your data at any time.</p>
+        </div>
+        <p>
+          Users can permanently delete their TBR account through the
+          application's settings menu. Initiating account deletion will
+          instantly and irreversibly erase your profile data, stored
+          astrological charts, received messages, and associated cloud-hosted
+          images from our active servers.
+        </p>
+      </section>
+
+      <section id="refunds" class="policy-section">
+        <h2>3. Refund & Cancellation Policy</h2>
+
+        <h3>3.1 Cancellation of Premium</h3>
+        <p>
+          Users maintain full autonomy to initiate premium cancellation routines
+          at any stage via their profile controls. Upon confirmation, recurring
+          billing triggers will cease immediately. Your premium access will
+          safely expire at the conclusion of the active billing cycle you have
+          already paid for.
+        </p>
+
+        <h3>3.2 Refund Framework</h3>
+        <p>
+          Because premium utility switches activate advanced tracking access
+          immediately upon payment capture,
+          <strong
+            >we do not issue pro-rata refunds for partial timelines or
+            unutilized features.</strong
+          >
+          All successful transactions are considered final.
+        </p>
+
+        <h3>3.3 Exceptions & Technical Failures</h3>
+        <p>
+          If a confirmed system breakdown prevents the provisioning of
+          subscription parameters despite a successful transaction debit, users
+          can lodge a support request via email within
+          <strong>three (3) business days</strong>.
+        </p>
+        <div class="highlight-box">
+          <p>
+            Upon verification of genuine technical failure, your refund will be
+            processed and funds will be reversed to the original payment method
+            within 5 to 7 operational business days.
+          </p>
+        </div>
+      </section>
+
+      <section id="shipping" class="policy-section">
+        <h2>4. Pricing, Shipping & Delivery Policy</h2>
+
+        <h3>4.1 Pricing</h3>
+        <p>
+          All prices for TBR Premium are listed dynamically within the
+          application. The standard TBR Premium Upgrade is priced at
+          <strong>₹99.00 INR</strong>. Prices are inclusive of applicable taxes
+          unless stated otherwise.
+        </p>
+
+        <h3>4.2 Digital Delivery (No Physical Shipping)</h3>
+        <p>
+          TBR provides software-as-a-service (SaaS) and digital utility
+          upgrades.
+          <strong
+            >We do not sell physical goods. Therefore, no physical shipping or
+            delivery of items is required or provided.</strong
+          >
+        </p>
+        <ul>
+          <li>
+            Upon successful completion of a payment via the Razorpay gateway,
+            your TBR account is upgraded automatically and instantly.
+          </li>
+          <li>
+            Delivery of the "Premium Features" is purely digital and activates
+            within seconds of transaction success.
+          </li>
+          <li>
+            You will receive a transaction confirmation email/receipt on the
+            email address provided during checkout.
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="policy-section">
+        <h2>5. Contact Information</h2>
+        <p>
+          If you have questions, grievances, or require support regarding these
+          policies or your payments, you can reach out to us through the
+          verified channels below:
+        </p>
+
+        <ul>
+          <li><strong>Merchant Legal Name:</strong> Aryendra Chaudhary</li>
+          <li><strong>Business App Name:</strong> TBR - ToBeReal</li>
+          <li>
+            <strong>Official Support Email:</strong> tbr.app.official@gmail.com
+          </li>
+          <li><strong>Customer Support Hotline:</strong> +91 9458456634</li>
+          <li>
+            <strong>Operating Hours:</strong> Monday - Friday | 10:00 AM - 06:00
+            PM (IST)
+          </li>
+        </ul>
+
+        <h3>Registered Operational Address</h3>
+        <p>A-4 cantt Board Staff colony lalkurti B.I. bazar meerut cantt</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Corporate Operations</h4>
+          <p><strong>Merchant Legal Name:</strong> Aryendra Chaudhary</p>
+          <p>
+            <strong>Focus Sector:</strong> Social Utility Data & UI Engineering
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Support & Communications</h4>
+          <p><strong>Official Email:</strong> tbr.app.official@gmail.com</p>
+          <p><strong>Contact Hotline:</strong> +91 9458456634</p>
+        </div>
+        <div class="footer-col">
+          <h4>Gateway Compliance</h4>
+          <p>
+            All online merchant activities are continuously audited and
+            processed via verified payment channels.
+          </p>
+          <p style="color: #38bdf8; font-weight: 700; margin-top: 10px">
+            🛡️ Verified HTTPS SSL 256-Bit Channel
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TBR App Framework. All corporate rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

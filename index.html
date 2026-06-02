@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TBR - ToBeReal | Honest Anonymous Messaging</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+      :root {
+        --bg-white: #ffffff;
+        --text-dark: #0f172a;
+        --text-muted: #64748b;
+        --primary-accent: #8b3dff; /* Canva Purple */
+        --secondary-accent: #00c4cc; /* Canva Cyan */
+        --surface-light: #f8fafc;
+        --border-color: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* NAVBAR */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+        background: rgba(255, 255, 255, 0.95);
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .logo {
+        font-size: 26px;
+        font-weight: 900;
+        color: var(--primary-accent);
+        text-decoration: none;
+        letter-spacing: -1px;
+        font-style: italic;
+      }
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 600;
+        font-size: 15px;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--primary-accent);
+      }
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary-accent),
+          var(--secondary-accent)
+        );
+        color: white;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(139, 61, 255, 0.3);
+      }
+
+      /* HERO SECTION */
+      .hero {
+        text-align: center;
+        padding: 100px 20px 80px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+      }
+      .hero h1 span {
+        background: linear-gradient(
+          90deg,
+          var(--primary-accent),
+          var(--secondary-accent)
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        margin-bottom: 40px;
+        font-weight: 500;
+        max-width: 600px;
+        margin-inline: auto;
+      }
+
+      /* FEATURES SECTION */
+      .features {
+        padding: 80px 5%;
+        background: var(--surface-light);
+        text-align: center;
+      }
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+      .section-subtitle {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .feature-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 24px;
+        border: 1px solid var(--border-color);
+        transition: transform 0.3s;
+        text-align: left;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+      }
+      .feature-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(139, 61, 255, 0.1);
+        color: var(--primary-accent);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 20px;
+      }
+      .feature-card h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+      .feature-card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      /* PRICING SECTION (CRITICAL FOR RAZORPAY) */
+      .pricing {
+        padding: 80px 5%;
+        text-align: center;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      .price-card {
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 40px;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+      }
+      .price-card.premium {
+        border: 2px solid var(--primary-accent);
+        background: var(--surface-light);
+      }
+      .badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--primary-accent);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .price-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+      .price-amount {
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+      }
+      .price-amount span {
+        font-size: 1rem;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+      .price-list {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+      .price-list li {
+        margin-bottom: 15px;
+        color: var(--text-dark);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .price-list li::before {
+        content: "✓";
+        color: #10b981;
+        font-weight: 900;
+      }
+
+      /* FOOTER (COMPLIANCE HEAVY) */
+      footer {
+        background: #0b0f19;
+        color: white;
+        padding: 60px 5% 30px;
+        margin-top: 50px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 40px;
+      }
+      .footer-col h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white;
+      }
+      .footer-col p,
+      .footer-col a {
+        color: #94a3b8;
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+        text-decoration: none;
+        display: block;
+      }
+      .footer-col a:hover {
+        color: var(--secondary-accent);
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 13px;
+        color: #64748b;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="logo">TBR.</a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="legal.html">Legal</a></li>
+      </ul>
+      <a href="#pricing" class="btn-primary">Get App</a>
+    </nav>
+
+    <header class="hero">
+      <h1>Send & Receive <span>Honest Feedback</span> Anonymously</h1>
+      <p>
+        TBR is the ultimate platform to discover what your friends really think
+        about you. Share your link, get anonymous messages, and unlock sender
+        hints.
+      </p>
+      <br />
+      <a
+        href="#pricing"
+        class="btn-primary"
+        style="padding: 16px 36px; font-size: 18px"
+        >Start Receiving Messages</a
+      >
+    </header>
+
+    <section id="features" class="features">
+      <h2 class="section-title">How TBR Works</h2>
+      <p class="section-subtitle">
+        A safe, secure, and fun way to interact with your social circle.
+      </p>
+
+      <div class="grid-3">
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h3>Share Your Link</h3>
+          <p>
+            Generate your unique TBR link and paste it on your Instagram Story
+            or bio. It takes less than 10 seconds to set up.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Get Anonymous Texts</h3>
+          <p>
+            Your friends can send you honest confessions, feedback, and
+            questions without ever revealing their true identity.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🕵️‍♂️</div>
+          <h3>Sender Intel</h3>
+          <p>
+            Curious who sent it? Use our advanced tracking tools to view device,
+            location, and network hints of the sender.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <h2 class="section-title">Transparent Pricing</h2>
+      <p class="section-subtitle">
+        Choose the plan that fits your curiosity. No hidden fees.
+      </p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3 class="price-title">Basic Tier</h3>
+          <div class="price-amount">₹0 <span>/ forever</span></div>
+          <ul class="price-list">
+            <li>Create your custom link</li>
+            <li>Receive unlimited messages</li>
+            <li>Reply on Instagram Stories</li>
+            <li>Standard UI cards</li>
+          </ul>
+          <button class="btn-primary" style="width: 100%; background: #0f172a">
+            Download Free
+          </button>
+        </div>
+
+        <div class="price-card premium">
+          <div class="badge">MOST POPULAR</div>
+          <h3 class="price-title">TBR Premium Upgrade</h3>
+          <div class="price-amount">₹99 <span>/ week</span></div>
+          <ul class="price-list">
+            <li>Unlock City & Country hints</li>
+            <li>Reveal Device & OS details</li>
+            <li>Remove all advertisements</li>
+            <li>Exclusive Pro Profile Badge</li>
+          </ul>
+          <button class="btn-primary" style="width: 100%">
+            Upgrade to Premium
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a
+            href="#"
+            class="logo"
+            style="
+              color: white;
+              font-size: 24px;
+              margin-bottom: 15px;
+              display: inline-block;
+            "
+            >TBR.</a
+          >
+          <p>
+            TBR provides next-generation interactive dashboards for your
+            anonymous text feedback and messaging.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal & Policies</h4>
+          <a href="legal.html#terms">Terms & Conditions</a>
+          <a href="legal.html#privacy">Privacy Policy</a>
+          <a href="legal.html#refunds">Refund & Cancellation Policy</a>
+          <a href="legal.html#shipping">Pricing & Delivery Policy</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p><strong>Email:</strong> tbr.app.official@gmail.com</p>
+          <p><strong>Phone:</strong> +91 9458456634</p>
+          <p><strong>Operating Hours:</strong> Mon-Fri, 10 AM - 6 PM</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Registered Address</h4>
+          <p>
+            A-4 cantt Board Staff colony lalkurti <br />
+            B.I. bazar meerut cantt
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TBR App Framework. All corporate rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
